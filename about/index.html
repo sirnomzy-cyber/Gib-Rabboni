@@ -87,12 +87,12 @@
                     <li><a href="/services/" class="main-nav__link">Services</a></li>
                     <li><a href="/projects/" class="main-nav__link">Projects</a></li>
                     <li><a href="/gallery/" class="main-nav__link">Gallery</a></li>
-                    <li><a href="/contact/" class="main-nav__link">Contact</a></li>
+                    <li><a href="/blog/" class="main-nav__link">Blog</a></li>
                 </ul>
             </nav>
 
             <div class="header__actions">
-                <a href="/contact/" class="btn btn--primary">Request a Quote</a>
+                <a href="/contact/" class="btn btn--primary">Contact Us</a>
             </div>
 
             <button class="hamburger" id="hamburger-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
@@ -109,10 +109,10 @@
                 <li><a href="/services/" class="mobile-menu__link">Services</a></li>
                 <li><a href="/projects/" class="mobile-menu__link">Projects</a></li>
                 <li><a href="/gallery/" class="mobile-menu__link">Gallery</a></li>
-                <li><a href="/contact/" class="mobile-menu__link">Contact</a></li>
+                <li><a href="/blog/" class="mobile-menu__link">Blog</a></li>
             </ul>
             <div class="mobile-menu__actions">
-                <a href="/contact/" class="btn btn--primary btn--block">Request a Quote</a>
+                <a href="/contact/" class="btn btn--primary btn--block">Contact Us</a>
                 <a href="tel:+2348088076974" class="btn btn--secondary btn--block">Call Now</a>
             </div>
         </nav>
@@ -180,9 +180,9 @@
                     <h2 class="section-title" id="mvv-title">Mission, Vision &amp; Core Values</h2>
                 </div>
 
-                <div class="card-grid card-grid--mvv">
-                    <article class="card card--mvv">
-                        <span class="icon-badge"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.8"/><circle cx="12" cy="12" r="1.2"/></svg></span>
+                <div class="mvv-top">
+                    <article class="card card--mvv" data-animate="fade-left">
+                        <span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.8"/><circle cx="12" cy="12" r="1.2"/></svg></span>
                         <h3 class="card__title">Our Mission</h3>
                         <p class="card__text">
                             To engineer acoustic and audio environments that elevate how people worship,
@@ -191,26 +191,43 @@
                         </p>
                     </article>
 
-                    <article class="card card--mvv">
-                        <span class="icon-badge"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="3"/></svg></span>
+                    <article class="card card--mvv" data-animate="fade-right">
+                        <span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="3"/></svg></span>
                         <h3 class="card__title">Our Vision</h3>
                         <p class="card__text">
                             To be Nigeria's most trusted name in acoustic engineering and professional
                             audio infrastructure, recognized for setting the standard the industry follows.
                         </p>
                     </article>
+                </div>
 
-                    <article class="card card--mvv">
-                        <span class="icon-badge"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.5S3.5 15 3.5 9a4.7 4.7 0 0 1 8.5-2.7A4.7 4.7 0 0 1 20.5 9c0 6-8.5 11.5-8.5 11.5Z"/></svg></span>
+                <div class="mvv-values" data-animate="fade-up">
+                    <div class="mvv-values__header">
+                        <span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.5S3.5 15 3.5 9a4.7 4.7 0 0 1 8.5-2.7A4.7 4.7 0 0 1 20.5 9c0 6-8.5 11.5-8.5 11.5Z"/></svg></span>
                         <h3 class="card__title">Core Values</h3>
-                        <ul class="card__list">
-                            <li>Precision in every measurement and install</li>
-                            <li>Integrity in every client relationship</li>
-                            <li>Excellence as a non-negotiable standard</li>
-                            <li>Innovation in materials and methods</li>
-                            <li>Reliability from consultation to handover</li>
-                        </ul>
-                    </article>
+                    </div>
+                    <ul class="mvv-values__list">
+                        <li data-animate="fade-up">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.8"/><circle cx="12" cy="12" r="1.2"/></svg>
+                            <span>Precision in every measurement and install</span>
+                        </li>
+                        <li data-animate="fade-up">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6.5v6c0 4.8 3.2 8.2 8 9.5 4.8-1.3 8-4.7 8-9.5v-6L12 3Z"/><path d="m9 12 2 2 4-4.5"/></svg>
+                            <span>Integrity in every client relationship</span>
+                        </li>
+                        <li data-animate="fade-up">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5 14.7 9 21.5 9.5 16.3 14 18 20.7 12 17 6 20.7 7.7 14 2.5 9.5 9.3 9 12 2.5Z"/></svg>
+                            <span>Excellence as a non-negotiable standard</span>
+                        </li>
+                        <li data-animate="fade-up">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.6 10.8c.6.5 1.1 1.3 1.1 2.2h5c0-.9.5-1.7 1.1-2.2A6 6 0 0 0 12 3Z"/></svg>
+                            <span>Innovation in materials and methods</span>
+                        </li>
+                        <li data-animate="fade-up">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><path d="M12 7v5.3l3.6 2.1"/></svg>
+                            <span>Reliability from consultation to handover</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -282,19 +299,23 @@
                 </div>
 
                 <div class="card-grid card-grid--trust">
-                    <article class="card card--trust">
+                    <article class="card card--trust" data-animate="fade-up">
+                        <span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 4h8v4a4 4 0 0 1-8 0V4Z"/><path d="M6 4H4a1 1 0 0 0-1 1c0 2.5 1.6 4.3 3.6 4.9M18 4h2a1 1 0 0 1 1 1c0 2.5-1.6 4.3-3.6 4.9"/><path d="M12 13v4M9 21h6M9.5 17h5l.5 4H9l.5-4Z"/></svg></span>
                         <h3 class="card__title">Proven Experience</h3>
                         <p class="card__text">Years of successful installations across diverse industries and environments.</p>
                     </article>
-                    <article class="card card--trust">
+                    <article class="card card--trust" data-animate="fade-up">
+                        <span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2.5"/><path d="M7 12h1.6l1.4-4 2 8 1.4-5.5 1 1.5h2.6"/></svg></span>
                         <h3 class="card__title">Technical Rigor</h3>
                         <p class="card__text">Every recommendation is grounded in acoustic measurement, not assumption.</p>
                     </article>
-                    <article class="card card--trust">
+                    <article class="card card--trust" data-animate="fade-up">
+                        <span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6.5v6c0 4.8 3.2 8.2 8 9.5 4.8-1.3 8-4.7 8-9.5v-6L12 3Z"/><path d="m9 12 2 2 4-4.5"/></svg></span>
                         <h3 class="card__title">End-to-End Accountability</h3>
                         <p class="card__text">From first survey to final handover, one team owns the outcome.</p>
                     </article>
-                    <article class="card card--trust">
+                    <article class="card card--trust" data-animate="fade-up">
+                        <span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="2.5" y="14" width="5" height="6" rx="1.6"/><rect x="16.5" y="14" width="5" height="6" rx="1.6"/><path d="M20 19a4 4 0 0 1-4 4h-2"/></svg></span>
                         <h3 class="card__title">Long-Term Support</h3>
                         <p class="card__text">We remain available long after installation is complete.</p>
                     </article>

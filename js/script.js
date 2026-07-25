@@ -90,6 +90,24 @@
     /* ================================================================
        4. NAVIGATION
        ================================================================ */
+    /* ================================================================
+       3b. HERO IMAGE SLIDESHOW
+       ================================================================ */
+    function initHeroSlideshow() {
+        const images = $$('.hero__bg-image');
+        if (images.length < 2) return;
+        if (prefersReducedMotion()) return;
+
+        let current = images.findIndex((img) => img.classList.contains('is-active'));
+        if (current === -1) current = 0;
+
+        setInterval(() => {
+            images[current].classList.remove('is-active');
+            current = (current + 1) % images.length;
+            images[current].classList.add('is-active');
+        }, 5000);
+    }
+
     function initNavigation() {
         dom.header = $('#site-header');
         dom.hamburger = $('#hamburger-btn');
@@ -746,6 +764,7 @@
        16. INITIALIZATION
        ================================================================ */
     function init() {
+        safeInit('HeroSlideshow', initHeroSlideshow);
         safeInit('Navigation', initNavigation);
         safeInit('SmoothScroll', initSmoothScroll);
         safeInit('ScrollReveal', initScrollReveal);
