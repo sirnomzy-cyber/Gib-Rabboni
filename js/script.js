@@ -229,10 +229,52 @@
        6. SCROLL REVEAL
        ================================================================ */
     function initScrollReveal() {
-        const targets = $$('.card, .service-block__grid, .company-story__grid, .company-philosophy__grid, [data-animate]');
+        // Two-column "split" layouts: first element flies in from the left,
+        // second flies in from the right (image+text pairs, Mission/Vision, etc.)
+        const splitContainers = $$(
+            '.service-block__grid, .company-story__grid, .company-philosophy__grid, .contact-main__grid, .mvv-top, .contact-info__primary'
+        );
+        splitContainers.forEach((grid) => {
+            const children = Array.from(grid.children);
+            if (children.length === 2) {
+                children[0].setAttribute('data-animate', 'fade-left');
+                children[1].setAttribute('data-animate', 'fade-right');
+            }
+        });
+
+        // Multi-item card / gallery grids: alternate left/right per item for a
+        // zig-zag entrance, indexed per-grid so each row starts clean.
+        const gridContainers = $$('.card-grid, .masonry-grid');
+        gridContainers.forEach((grid) => {
+            const items = Array.from(grid.children).filter((el) =>
+                el.matches('.card:not(.testimonial-card), .gallery-item')
+            );
+            items.forEach((el, i) => {
+                el.setAttribute('data-animate', i % 2 === 0 ? 'fade-left' : 'fade-right');
+            });
+        });
+
+        // Prominent standalone buttons: pop/zoom in rather than fly sideways
+        $$('.hero__actions .btn, .cta-band__actions .btn, .enquiry-form button[type="submit"]').forEach((btn) => {
+            btn.setAttribute('data-animate', 'zoom');
+        });
+
+        const targets = $$(
+            '.card:not(.testimonial-card), .gallery-item, ' +
+            '.service-block__grid > *, .company-story__grid > *, .company-philosophy__grid > *, ' +
+            '.contact-main__grid > *, .mvv-top > *, .contact-info__primary > *, ' +
+            '.hero__actions .btn, .cta-band__actions .btn, .enquiry-form button[type="submit"], [data-animate]'
+        );
         if (!targets.length) return;
 
-        targets.forEach((el, i) => {
+        const seen = new Set();
+        const uniqueTargets = targets.filter((el) => {
+            if (seen.has(el)) return false;
+            seen.add(el);
+            return true;
+        });
+
+        uniqueTargets.forEach((el, i) => {
             if (!el.hasAttribute('data-animate')) {
                 el.setAttribute('data-animate', 'fade-up');
             }
@@ -240,7 +282,7 @@
         });
 
         if (prefersReducedMotion()) {
-            targets.forEach((el) => el.classList.add('is-visible'));
+            uniqueTargets.forEach((el) => el.classList.add('is-visible'));
             return;
         }
 
@@ -256,7 +298,7 @@
             { threshold: 0.12, rootMargin: CONFIG.revealMargin }
         );
 
-        targets.forEach((el) => observer.observe(el));
+        uniqueTargets.forEach((el) => observer.observe(el));
     }
 
     /* ================================================================

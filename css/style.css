@@ -1293,15 +1293,16 @@ section { padding-block: var(--space-section); position: relative; }
    ==================================================================== */
 [data-animate] {
     opacity: 0;
-    transform: translateY(28px);
-    transition: opacity 700ms cubic-bezier(0.4,0,0.2,1), transform 700ms cubic-bezier(0.4,0,0.2,1);
+    transform: translateY(48px);
+    transition: opacity 750ms cubic-bezier(0.16,1,0.3,1), transform 750ms cubic-bezier(0.16,1,0.3,1);
+    will-change: transform, opacity;
 }
 [data-animate].is-visible { opacity: 1; transform: translateY(0); }
-[data-animate="fade-left"] { transform: translateX(-28px); }
+[data-animate="fade-left"] { transform: translateX(-90px); }
 [data-animate="fade-left"].is-visible { transform: translateX(0); }
-[data-animate="fade-right"] { transform: translateX(28px); }
+[data-animate="fade-right"] { transform: translateX(90px); }
 [data-animate="fade-right"].is-visible { transform: translateX(0); }
-[data-animate="zoom"] { transform: scale(0.94); }
+[data-animate="zoom"] { transform: scale(0.6); }
 [data-animate="zoom"].is-visible { transform: scale(1); }
 
 @keyframes scrollDot {
