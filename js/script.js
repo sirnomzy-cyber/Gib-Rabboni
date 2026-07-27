@@ -1,5 +1,5 @@
 /* ====================================================================
-   GIB RABBONI LIMITED — SITE JAVASCRIPT
+   GIB RABBONI LIMITED, SITE JAVASCRIPT
    js/script.js
    Vanilla ES6+. No frameworks or external dependencies.
 
@@ -154,6 +154,14 @@
                 const isOpen = dom.hamburger.getAttribute('aria-expanded') === 'true';
                 isOpen ? closeMenu() : openMenu();
             });
+
+            // Dedicated close (X) button inside the menu panel itself ,
+            // the hamburger button sits behind the menu overlay once open,
+            // so this is the reliable way to close it
+            const closeBtn = $('#mobile-menu-close', dom.mobileMenu);
+            if (closeBtn) {
+                closeBtn.addEventListener('click', closeMenu);
+            }
 
             // Close on outside click
             document.addEventListener('click', (e) => {
@@ -731,7 +739,7 @@
                 budgetRange: budgetLabel
             });
 
-            feedback.textContent = 'Thank you — opening WhatsApp to send your enquiry.';
+            feedback.textContent = 'Thank you, opening WhatsApp to send your enquiry.';
             feedback.className = 'form-feedback is-success';
 
             const url = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`;
